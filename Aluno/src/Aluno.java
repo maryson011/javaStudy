@@ -3,7 +3,7 @@ public class Aluno {
     private String lastName;
     private int age;
 
-    public String getName(String name){
+    public String getName(String name, String lastName){
         if(name == "Maryson"){
             this.name = name;
             System.out.println("Nome cadastrado.");
@@ -11,8 +11,15 @@ public class Aluno {
             System.out.println("Nome invalido!");
         }
 
-        String nameReturn = this.name + "_user";
+        String nameReturn = this.name + getLastName(lastName);
+
         return nameReturn;
+    }
+
+    public String getLastName(String text){
+        String letras = text.substring(0, 3);
+        
+        return this.lastName = letras;
     }
 
     public int getYearBirth(int age){
